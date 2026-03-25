@@ -34,59 +34,57 @@ export function Login() {
     console.log(errors);
 
     const onSubmit = async (data) => {
-        try {
-            const { data: userData } = await toast.promise(
-                api.post('/sessions', {
-                    email: data.email,
-                    password: data.password,
-                }),
-                {
-                    pending: 'Verificando seus dados...',
-                    success: 'Seja bem-vindo(a) ao DevBurger! 🍔',
-                    error: 'Email ou senha Incorretos.'
+        const { data: userData } = await toast.promise(
+            api.post('/sessions', {
+                email: data.email,
+                password: data.password,
+            }),
+            {
+                pending: 'Verificando seus dados...',
+                success: 'Seja bem-vindo(a) ao DevBurger! 🍔',
+                error: (error) => {
+                    return error?.response?.data?.error || 'Email ou senha incorretos';
                 }
-            );
+            }
+        );
 
-            putUserData(userData);
+        putUserData(userData);
 
-            setTimeout(() => {
-                if (userData.admin) {
-                    navigate('/admin/pedidos');
-                } else {
-                    navigate('/');
-                }
-            }, 2000);
-        } catch (error) {
-            console.error('Erro no login:', error);
-        }
-    };
+        setTimeout(() => {
+            if (userData.admin) {
+                navigate('/admin/pedidos');
+            } else {
+                navigate('/');
+            }
+        }, 2000);
 
-    return (
-        <Container>
-            <LeftContainer>
-                <img src={logo} alt="Logo-DevBurger" />
-            </LeftContainer>
+        return (
+            <Container>
+                <LeftContainer>
+                    <img src={logo} alt="Logo-DevBurger" />
+                </LeftContainer>
 
-            <RightContainer>
-                <Title>Olá, seja bem vindo ao <span>Dev Burguer!</span> <br />
-                    Acesse com seu <span>Login e senha.</span></Title>
+                <RightContainer>
+                    <Title>Olá, seja bem vindo ao <span>Dev Burguer!</span> <br />
+                        Acesse com seu <span>Login e senha.</span></Title>
 
-                <Form onSubmit={handleSubmit(onSubmit)}>
-                    <InputContainer>
-                        <label>Email</label>
-                        <input type="email" {...register("email")} />
-                        <p>{errors?.email?.message}</p>
-                    </InputContainer>
+                    <Form onSubmit={handleSubmit(onSubmit)}>
+                        <InputContainer>
+                            <label>Email</label>
+                            <input type="email" {...register("email")} />
+                            <p>{errors?.email?.message}</p>
+                        </InputContainer>
 
-                    <InputContainer>
-                        <label>Senha</label>
-                        <input type="password" {...register("password")} />
-                        <p>{errors?.password?.message}</p>
-                    </InputContainer>
-                    <Button type="submit">Entrar</Button>
-                </Form>
-                <p>Não possui conta ?<Link to="/cadastro"> Clique aqui.</Link></p>
-            </RightContainer>
-        </Container>
-    );
+                        <InputContainer>
+                            <label>Senha</label>
+                            <input type="password" {...register("password")} />
+                            <p>{errors?.password?.message}</p>
+                        </InputContainer>
+                        <Button type="submit">Entrar</Button>
+                    </Form>
+                    <p>Não possui conta ?<Link to="/cadastro"> Clique aqui.</Link></p>
+                </RightContainer>
+            </Container>
+        );
+    }
 }
