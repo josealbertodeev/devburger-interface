@@ -34,29 +34,31 @@ export function Login() {
     console.log(errors);
 
     const onSubmit = async (data) => {
-        const { data: userData } = await toast.promise(
-            api.post('/sessions', {
-                email: data.email,
-                password: data.password,
-            }),
-            {
-                pending: 'Verificando seus dados...',
-                success: {
-                    render() {
-                        setTimeout(() => {
-                            if(userData.admin){
-                                navigate('/admin/pedidos');
-                            }else{
-                                navigate('/');
-                            }
-                        }, 2000);
-                        return 'Seja bem-vindo(a) ao DevBurger! 🍔';
-                    },
-                    error: 'Email ou senha Incorretos.',
-                },
-            }
-        );
-        putUserData(userData);
+        try {
+            const { data: userData } = await toast.promise(
+                api.post('/sessions', {
+                    email: data.email,
+                    password: data.password,
+                }),
+                {
+                    pending: 'Verificando seus dados...',
+                    success: 'Seja bem-vindo(a) ao DevBurger! 🍔',
+                    error: 'Email ou senha Incorretos.'
+                }
+            );
+
+            putUserData(userData);
+
+            setTimeout(() => {
+                if (userData.admin) {
+                    navigate('/admin/pedidos');
+                } else {
+                    navigate('/');
+                }
+            }, 2000);
+        } catch (error) {
+            console.error('Erro no login:', error);
+        }
     };
 
     return (
