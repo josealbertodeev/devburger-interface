@@ -1,0 +1,47 @@
+import styled from 'styled-components';
+
+export const Container = styled.div`
+    .carousel-item{
+        padding-right: 40px;
+    }
+
+    overflow-x: hidden;
+
+    .react-multi-carousel-list {
+        overflow: visible;
+    }
+
+    .react-multiple-carousel__arrow--left{
+        left: 15px;
+        top: 10px
+    }
+
+    .react-multiple-carousel__arrow--right{
+        top: 10px
+    }
+
+    padding-left: 40px ;
+    padding-bottom: 40px;
+`;
+
+export const Title = styled.h2`
+    font-size: 32px;
+    font-weight: 800;
+    color: #61a120;
+    padding-bottom: 12px;
+    position: relative;
+    text-align: center;
+    margin: 70px 0;
+    margin-top: 70px;
+
+    &::after{
+        content: '';
+        border-bottom: 4px solid #61a120;
+        width: 60px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+`;
