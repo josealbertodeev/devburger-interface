@@ -31,60 +31,65 @@ export function Login() {
         resolver: yupResolver(schema),
     });
 
-    console.log(errors);
-
     const onSubmit = async (data) => {
-        const { data: userData } = await toast.promise(
+        toast.promise(
             api.post('/sessions', {
                 email: data.email,
                 password: data.password,
             }),
             {
                 pending: 'Verificando seus dados...',
-                success: 'Seja bem-vindo(a) ao DevBurger! 🍔',
-                error: (error) => {
-                    return error?.response?.data?.error || 'Email ou senha incorretos';
+                success: {
+                    render({ data: response }) {
+                        const userData = response.data;
+                        putUserData(userData);
+
+                        setTimeout(() => {
+                            if (userData.admin) {
+                                navigate('/admin/pedidos');
+                            } else {
+                                navigate('/');
+                            }
+                        }, 500);
+
+                        return 'Seja bem-vindo(a) ao DevBurger! 🍔';
+                    }
+                },
+                error: {
+                    render({ data: error }) {
+                        return error?.response?.data?.error || 'Email ou senha incorretos';
+                    }
                 }
             }
         );
+    };
 
-        putUserData(userData);
+    return (
+        <Container>
+            <LeftContainer>
+                <img src={logo} alt="Logo-DevBurger" />
+            </LeftContainer>
 
-        setTimeout(() => {
-            if (userData.admin) {
-                navigate('/admin/pedidos');
-            } else {
-                navigate('/');
-            }
-        }, 2000);
+            <RightContainer>
+                <Title>Olá, seja bem vindo ao <span>Dev Burguer!</span> <br />
+                    Acesse com seu <span>Login e senha.</span></Title>
 
-        return (
-            <Container>
-                <LeftContainer>
-                    <img src={logo} alt="Logo-DevBurger" />
-                </LeftContainer>
+                <Form onSubmit={handleSubmit(onSubmit)}>
+                    <InputContainer>
+                        <label>Email</label>
+                        <input type="email" {...register("email")} />
+                        <p>{errors?.email?.message}</p>
+                    </InputContainer>
 
-                <RightContainer>
-                    <Title>Olá, seja bem vindo ao <span>Dev Burguer!</span> <br />
-                        Acesse com seu <span>Login e senha.</span></Title>
-
-                    <Form onSubmit={handleSubmit(onSubmit)}>
-                        <InputContainer>
-                            <label>Email</label>
-                            <input type="email" {...register("email")} />
-                            <p>{errors?.email?.message}</p>
-                        </InputContainer>
-
-                        <InputContainer>
-                            <label>Senha</label>
-                            <input type="password" {...register("password")} />
-                            <p>{errors?.password?.message}</p>
-                        </InputContainer>
-                        <Button type="submit">Entrar</Button>
-                    </Form>
-                    <p>Não possui conta ?<Link to="/cadastro"> Clique aqui.</Link></p>
-                </RightContainer>
-            </Container>
-        );
-    }
+                    <InputContainer>
+                        <label>Senha</label>
+                        <input type="password" {...register("password")} />
+                        <p>{errors?.password?.message}</p>
+                    </InputContainer>
+                    <Button type="submit">Entrar</Button>
+                </Form>
+                <p>Não possui conta ?<Link to="/cadastro"> Clique aqui.</Link></p>
+            </RightContainer>
+        </Container>
+    );
 }

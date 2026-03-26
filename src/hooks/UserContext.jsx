@@ -19,8 +19,14 @@ export const UserProvider = ({ children }) => {
 
     useEffect(() => {
         const userInfoLocalStorage = localStorage.getItem('devburger:userData');
-        if (userInfoLocalStorage){
-            setUserInfo(JSON.parse(userInfoLocalStorage));
+        if (userInfoLocalStorage) {
+            try {
+                const parsedData = JSON.parse(userInfoLocalStorage);
+                setUserInfo(parsedData);
+            } catch (error) {
+                console.warn('Dados corrompidos no localStorage, removendo...', error);
+                localStorage.removeItem('devburger:userData');
+            }
         }
     }, []);
 
