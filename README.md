@@ -2,9 +2,9 @@
 
 > Sistema completo de delivery de hambúrgueres desenvolvido com React + Vite
 
-## 🚀 Demo
+<img width="895" height="888" alt="Screenshot_1" src="https://github.com/user-attachments/assets/9fdfa421-9230-4641-a783-ee4b30aa43c5" />
 
-🔗 **[Visualizar Demo Online](https://your-demo-link.vercel.app)**
+🔗 Acesse o site Front end [Link](https://devburger-interface-rho.vercel.app/)
 
 ## 📋 Sobre o Projeto
 
@@ -178,25 +178,3 @@ yarn preview      # Preview da build
 yarn lint         # Linting do código
 ```
 
-## 🐛 Reportar Bugs
-
-Encontrou um bug? Abra uma [issue](https://github.com/seu-usuario/devburger-interface/issues) com:
-- Descrição detalhada do problema
-- Passos para reproduzir
-- Screenshots (se aplicável)
-- Informações do ambiente
-
-## 📜 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## 👨‍💻 Autor
-
-**Seu Nome**
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
-- LinkedIn: [seu-perfil](https://linkedin.com/in/seu-perfil)
-- E-mail: seu.email@exemplo.com
-
----
-
-⭐ **Se este projeto te ajudou, deixe uma estrela!** ⭐
