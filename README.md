@@ -2,9 +2,26 @@
 
 > Sistema completo de delivery de hambúrgueres desenvolvido com React + Vite
 
-<img width="895" height="888" alt="Screenshot_1" src="https://github.com/user-attachments/assets/9fdfa421-9230-4641-a783-ee4b30aa43c5" />
+## Tela de Login e Página Principal 
+<div style="display": flex; gap: 10px; >
+    <img width="400" height="400" alt="Screenshot_8" src="https://github.com/user-attachments/assets/cd62ccc5-f609-4fcc-8cd2-f99328fa7728" />
+    <img width="400" height="400" alt="Screenshot_1" src="https://github.com/user-attachments/assets/9fdfa421-9230-4641-a783-ee4b30aa43c5" />
+</div>
 
-🔗 Acesse o site Front end [Link](https://devburger-interface-rho.vercel.app/)
+## Tela de Menu e Checkout 
+<div style="display": flex; gap: 10px; >
+    <img width="400" height="400" alt="Screenshot_5" src="https://github.com/user-attachments/assets/46f38cb9-cdd1-4f8f-9aa4-cfc41f570d19" />
+    <img width="400" height="400" alt="Screenshot_6" src="https://github.com/user-attachments/assets/85f05f17-e048-466a-bec9-45449a01eea1" />
+</div>
+
+## Tela de Pagamento e Admin 
+<div style="display": flex; gap: 10px; >
+    <img width="400" height="400" alt="Screenshot_7" src="https://github.com/user-attachments/assets/edeab1ab-5edc-41d4-b5fa-c7bfc4bd132c" />
+    <img width="400" height="400" alt="Screenshot_9" src="https://github.com/user-attachments/assets/5a53f1f7-3e56-4efd-bca1-c30a563a5100" />
+</div>
+
+
+🔗 Acesse o site Front End [Link](https://devburger-interface-rho.vercel.app/)
 
 ## 📋 Sobre o Projeto
 
