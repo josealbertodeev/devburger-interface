@@ -20,8 +20,9 @@
     <img width="400" height="400" alt="Screenshot_9" src="https://github.com/user-attachments/assets/5a53f1f7-3e56-4efd-bca1-c30a563a5100" />
 </div>
 
+🔗 Front End [Link](https://devburger-interface-rho.vercel.app/)
 
-🔗 Acesse o site Front End [Link](https://devburger-interface-rho.vercel.app/)
+🔗 Repositório Backend [Link](https://github.com/josealbertodeev/dev-burger-api)
 
 ## 📋 Sobre o Projeto
 
