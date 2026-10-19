@@ -1,198 +1,136 @@
-# 🍔 DevBurger - Interface Frontend
+# DevBurger: interface
 
-> Sistema completo de delivery de hambúrgueres desenvolvido com React + Vite
+Front-end de um sistema de delivery de hambúrgueres, com área do cliente (cardápio, carrinho e pagamento com Stripe) e painel administrativo (pedidos e produtos). Consome a [DevBurger API](https://github.com/josealbertodeev/dev-burger-api).
 
-## Tela de Login e Página Principal 
-<div style="display": flex; gap: 10px; >
-    <img width="400" height="400" alt="Screenshot_8" src="https://github.com/user-attachments/assets/cd62ccc5-f609-4fcc-8cd2-f99328fa7728" />
-    <img width="400" height="400" alt="Screenshot_1" src="https://github.com/user-attachments/assets/9fdfa421-9230-4641-a783-ee4b30aa43c5" />
-</div>
+**[Repositório da API](https://github.com/josealbertodeev/dev-burger-api)**
 
-## Tela de Menu e Checkout 
-<div style="display": flex; gap: 10px; >
-    <img width="400" height="400" alt="Screenshot_5" src="https://github.com/user-attachments/assets/46f38cb9-cdd1-4f8f-9aa4-cfc41f570d19" />
-    <img width="400" height="400" alt="Screenshot_6" src="https://github.com/user-attachments/assets/85f05f17-e048-466a-bec9-45449a01eea1" />
-</div>
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-7-CA4245?logo=reactrouter&logoColor=white)
+![Styled Components](https://img.shields.io/badge/styled--components-6-DB7093?logo=styledcomponents&logoColor=white)
+![Stripe](https://img.shields.io/badge/Stripe-Payment_Element-635BFF?logo=stripe&logoColor=white)
 
-## Tela de Pagamento e Admin 
-<div style="display": flex; gap: 10px; >
-    <img width="400" height="400" alt="Screenshot_7" src="https://github.com/user-attachments/assets/edeab1ab-5edc-41d4-b5fa-c7bfc4bd132c" />
-    <img width="400" height="400" alt="Screenshot_9" src="https://github.com/user-attachments/assets/5a53f1f7-3e56-4efd-bca1-c30a563a5100" />
-</div>
+## Telas
 
-🔗 Front End [Link](https://devburger-interface-rho.vercel.app/)
+| Login | Página inicial |
+| --- | --- |
+| <img src="https://github.com/user-attachments/assets/cd62ccc5-f609-4fcc-8cd2-f99328fa7728" alt="Tela de login" width="400"> | <img src="https://github.com/user-attachments/assets/9fdfa421-9230-4641-a783-ee4b30aa43c5" alt="Página inicial" width="400"> |
 
-🔗 Repositório Backend [Link](https://github.com/josealbertodeev/dev-burger-api)
+| Cardápio | Carrinho |
+| --- | --- |
+| <img src="https://github.com/user-attachments/assets/46f38cb9-cdd1-4f8f-9aa4-cfc41f570d19" alt="Cardápio" width="400"> | <img src="https://github.com/user-attachments/assets/85f05f17-e048-466a-bec9-45449a01eea1" alt="Carrinho" width="400"> |
 
-## 📋 Sobre o Projeto
+| Pagamento | Painel de pedidos |
+| --- | --- |
+| <img src="https://github.com/user-attachments/assets/edeab1ab-5edc-41d4-b5fa-c7bfc4bd132c" alt="Pagamento com Stripe" width="400"> | <img src="https://github.com/user-attachments/assets/5a53f1f7-3e56-4efd-bca1-c30a563a5100" alt="Painel administrativo de pedidos" width="400"> |
 
-O **DevBurger** é uma aplicação completa de delivery de hambúrgueres com interface moderna e intuitiva. O projeto inclui área do cliente para pedidos e área administrativa para gerenciamento de produtos e pedidos.
+## Funcionalidades
 
-### ✨ Funcionalidades
+### Cliente
 
-#### 👤 Área do Cliente
-- ✅ Cadastro e autenticação de usuários
-- ✅ Catálogo de produtos por categorias
-- ✅ Carrinho de compras interativo
-- ✅ Finalização de pedidos
-- ✅ Integração com Stripe para pagamentos
-- ✅ Histórico de pedidos
+- Cadastro e login, com validação de formulário
+- Página inicial com carrosséis de categorias e de ofertas
+- Cardápio com filtro por categoria. A categoria fica na URL (`/cardapio?categoria=2`), então o link pode ser compartilhado
+- Carrinho com aumento e redução de quantidade, salvo no `localStorage`
+- Pagamento com Stripe Payment Element
+- Página de status do pagamento
 
-#### 🔧 Área Administrativa
-- ✅ Dashboard administrativo
-- ✅ Gerenciamento de produtos (CRUD)
-- ✅ Gerenciamento de categorias
-- ✅ Controle de pedidos e status
-- ✅ Upload de imagens de produtos
+### Administrador
 
-## 🛠️ Tecnologias Utilizadas
+- Lista de pedidos com filtro por status
+- Atualização do status de cada pedido
+- Detalhes do pedido em linha expansível
+- Lista de produtos com indicação de oferta
+- Cadastro e edição de produtos com upload de imagem
 
-### Frontend
-- **[React 18](https://reactjs.org/)** - Biblioteca JavaScript
-- **[Vite](https://vitejs.dev/)** - Build tool e dev server
-- **[React Router DOM](https://reactrouter.com/)** - Roteamento
-- **[Styled Components](https://styled-components.com/)** - CSS-in-JS
-- **[React Hook Form](https://react-hook-form.com/)** - Gerenciamento de formulários
-- **[Yup](https://github.com/jquense/yup)** - Validação de schemas
-- **[Axios](https://axios-http.com/)** - Cliente HTTP
-- **[React Toastify](https://fkhadra.github.io/react-toastify/)** - Notificações
-- **[Phosphor Icons](https://phosphoricons.com/)** - Ícones
-- **[Stripe](https://stripe.com/)** - Processamento de pagamentos
+## Tecnologias
 
-## 🚀 Como Rodar o Projeto
+| Área | Bibliotecas |
+| --- | --- |
+| Base | React 19, Vite 7, React Router 7 |
+| Estilo | styled-components, Material UI (tabelas do painel) |
+| Formulários | React Hook Form, Yup |
+| Dados | Axios |
+| Pagamento | Stripe (`@stripe/react-stripe-js`) |
+| Interface | React Toastify, Phosphor Icons, React Select, React Multi Carousel |
 
-### Pré-requisitos
-- Node.js (versão 16 ou superior)
-- Yarn ou NPM
-- Backend da aplicação rodando
+## Arquitetura
 
-### Instalação
-
-```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/devburger-interface.git
-
-# Entre na pasta do projeto
-cd devburger-interface
-
-# Instale as dependências
-yarn install
-# ou
-npm install
-
-# Configure as variáveis de ambiente
-cp .env.example .env
+```
+src/
+├── routes/          # Rotas da área do cliente e do painel
+├── layouts/
+│   ├── UserLayout/  # Header e footer da área do cliente
+│   └── AdminLayout/ # Menu lateral e proteção das rotas de admin
+├── containers/      # Páginas (Home, Menu, Cart, Checkout, Login, Admin...)
+├── components/      # Componentes reutilizáveis (cards, carrosséis, botão, carrinho)
+├── hooks/           # Contextos de usuário e carrinho
+├── services/api.js  # Instância do Axios com interceptors
+├── config/          # Configuração do Stripe
+├── styles/          # Estilos globais e tema
+└── utils/           # Formatação de preço e data
 ```
 
-### Configuração do .env
+### Estado global com Context API
+
+- **`UserContext`** guarda os dados do usuário logado e o token, e sincroniza com o `localStorage` para manter a sessão ao recarregar a página
+- **`CartContext`** centraliza as operações do carrinho (adicionar, aumentar, diminuir, remover, limpar) e também persiste no `localStorage`
+
+### Autenticação com interceptors do Axios
+
+O arquivo `services/api.js` tem dois interceptors:
+
+- **Na requisição:** lê o token do `localStorage` e adiciona o header `Authorization: Bearer <token>` automaticamente
+- **Na resposta:** se a API responder 401 (token expirado ou inválido), limpa a sessão e redireciona para o login
+
+Assim, nenhuma página precisa lidar com o token manualmente.
+
+### Fluxo de compra
+
+1. O carrinho envia os itens para a API, que cria uma intenção de pagamento no Stripe e devolve o `clientSecret`
+2. A página de checkout renderiza o Payment Element do Stripe com esse `clientSecret`
+3. Com o pagamento confirmado, o front-end cria o pedido na API e limpa o carrinho
+
+### Rotas do painel
+
+O `AdminLayout` verifica se o usuário logado é administrador antes de renderizar as rotas do painel. Essa verificação no front-end serve só para a interface: a proteção real fica na API, que valida o token e a permissão em cada requisição.
+
+## Como rodar localmente
+
+Pré-requisitos: [Node.js](https://nodejs.org/) 20.19 ou superior e a [DevBurger API](https://github.com/josealbertodeev/dev-burger-api) rodando.
+
+```bash
+git clone https://github.com/josealbertodeev/devburger-interface.git
+cd devburger-interface
+npm install
+cp .env.example .env
+npm run dev
+```
+
+No `.env`, aponte para a API:
 
 ```env
 VITE_BASE_URL=http://localhost:3001
 ```
 
-### Executando
+O projeto abre em `http://localhost:5173`.
 
-```bash
-# Modo desenvolvimento
-yarn dev
-# ou
-npm run dev
+| Comando | O que faz |
+| --- | --- |
+| `npm run dev` | Servidor de desenvolvimento |
+| `npm run build` | Versão de produção em `dist/` |
+| `npm run preview` | Serve a versão de produção localmente |
+| `npm run lint` | Verifica o código com ESLint |
+| `npm run format` | Formata o código com Prettier |
 
-# Build para produção
-yarn build
-# ou
-npm run build
+## Próximos passos
 
-# Preview da build
-yarn preview
-# ou
-npm run preview
-```
+- Histórico de pedidos para o cliente
+- Gerenciamento de categorias no painel
+- Exclusão de produtos
+- Criar o pedido pelo webhook do Stripe, e não pelo navegador, para garantir que todo pagamento confirmado vire pedido
+- Testes com Vitest e Testing Library
 
-A aplicação estará disponível em `http://localhost:5173`
+## Autor
 
-## 📁 Estrutura do Projeto
-
-```
-src/
-├── components/          # Componentes reutilizáveis
-│   ├── Button/
-│   ├── Header/
-│   ├── Footer/
-│   └── ...
-├── containers/          # Páginas principais
-│   ├── Home/
-│   ├── Login/
-│   ├── Menu/
-│   ├── Cart/
-│   └── Admin/
-├── hooks/              # Context API e hooks customizados
-│   ├── UserContext.jsx
-│   └── CartContext.jsx
-├── layouts/            # Layouts da aplicação
-│   ├── UserLayout/
-│   └── AdminLayout/
-├── services/           # Configurações de API
-│   └── api.js
-├── styles/            # Estilos globais e temas
-│   ├── globalStyles.js
-│   └── themes/
-└── routes/            # Configuração de rotas
-    └── index.jsx
-```
-
-## 🌐 Deploy
-
-### Vercel (Recomendado)
-
-1. Faça push do código para o GitHub
-2. Acesse [vercel.com](https://vercel.com) 
-3. Conecte seu repositório
-4. Configure a variável de ambiente `VITE_BASE_URL`
-5. Deploy automático! 🚀
-
-### Netlify
-
-```bash
-# Build do projeto
-yarn build
-
-# Upload da pasta dist/ no Netlify
-```
-
-### Variáveis de Ambiente (Produção)
-```env
-VITE_BASE_URL=https://seu-backend-api.herokuapp.com
-```
-
-## 🔒 Autenticação
-
-O sistema utiliza JWT (JSON Web Token) para autenticação:
-- Token armazenado no localStorage
-- Interceptor Axios para inserir token automaticamente
-- Redirecionamento automático para login em caso de token inválido
-
-## 🎨 Design System
-
-- **Cores principais**: Tema escuro com detalhes roxos
-- **Tipografia**: Fontes modernas e legíveis  
-- **Responsividade**: Adaptado para mobile, tablet e desktop
-- **Componentes**: Sistema de design consistente
-
-## 🤝 Como Contribuir
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -m 'Add: nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Abra um Pull Request
-
-## 📝 Scripts Disponíveis
-
-```bash
-yarn dev          # Inicia servidor de desenvolvimento
-yarn build        # Build para produção
-yarn preview      # Preview da build
-yarn lint         # Linting do código
-```
-
+**José Alberto**: [LinkedIn](https://www.linkedin.com/in/josealbertofarias/) · [Portfólio](https://josealbertodeev.github.io/portfolio/)
